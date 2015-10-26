@@ -21,6 +21,7 @@ class appuser extends adb{
        return $this->query($str_sql);
         // return ($this->fetch() != null);
     }
+   
 }
 
 /*$myuser =  new appuser();

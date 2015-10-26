@@ -86,6 +86,14 @@ function cropToGrow(){
 }
 
 function getUser(){
+    var strUrl = myurl+"cmd=5";
+    var objResult = sendRequest(strUrl);
+
+    if(objResult.result == 0){
+        alert(objResult.message);
+        return;
+    }
+    document.getElementById("username").innerHTML=objResult.message;
 
 }
 
@@ -134,5 +142,78 @@ function signUpUser(){
     document.getElementById("error_area").innerHTML = '<div class="chip green white-text">'+objResult.message+'<i class="material-icons">close</i></div>';
    
     // window.location.href = "index.html";
+}
+
+/**
+Adding a new farm
+*/
+function addFarm(){
+    /*Farm name*/
+    var farmname = $("#farmname").val();
+    /*longitude*/
+    var longitude = $("#longitude").val();
+      /*latitude*/
+    var latitude = $("#latitude").val();
+    /*City */
+    var city = $("#city").val();
+      /*City Id*/
+    var cityId = $("#cityId").val();
+     /*Farm size*/
+    var farmSize = $("#farmSize").val();
+
+    /* empty username */
+    if(farmname.length == 0){
+        document.getElementById("error_area").innerHTML = '<div class="chip red white-text">Empty Farm name<i class="material-icons">close</i></div>';
+        return
+        }
+    if(longitude.length == 0){
+        document.getElementById("error_area").innerHTML = '<div class="chip red white-text">Empty longitude<i class="material-icons">close</i></div>';
+        return;
+    }
+    if(latitude.length == 0){
+        document.getElementById("error_area").innerHTML = '<div class="chip red white-text">Empty Latitude<i class="material-icons">close</i></div>';
+        return;
+    }
+    if(city.length == 0){
+        document.getElementById("error_area").innerHTML = '<div class="chip red white-text">Empty City<i class="material-icons">close</i></div>';
+        return;
+    }
+    if(cityId.length == 0){
+        document.getElementById("error_area").innerHTML = '<div class="chip red white-text">Empty City Id<i class="material-icons">close</i></div>';
+        return;
+    }
+    if(farmSize.length == 0){
+        document.getElementById("error_area").innerHTML = '<div class="chip red white-text">Empty Farm Size<i class="material-icons">close</i></div>';
+        return;
+    }
+    var strUrl = myurl+"cmd=4&farmname="+farmname+"&longitude="+longitude+"&latitude="+latitude+"&city="+city+"&cityId="+cityId+"&farmSize="+farmSize;
+    var objResult = sendRequest(strUrl);
+    var errorArea = document.getElementById("error_area");
+    document.getElementById("error_area").innerHTML = '<div class="progress"><div class="indeterminate"></div></div>';
+    if(objResult.result == 0) {
+    document.getElementById("error_area").innerHTML = '<div class="chip red white-text">'+objResult.message+'<i class="material-icons">close</i></div>';
+    return;
+    }
+    $("#farmname").val('');
+    $("#longitude").val('');
+    $("#latitude").val('');
+    $("#cityId").val('');
+    $("#city").val('');
+    $("#farmSize").val('');
+    document.getElementById("error_area").innerHTML = '<div class="chip green white-text">'+objResult.message+'<i class="material-icons">close</i></div>';
+   
+    // window.location.href = "home.html";
+}
+function logout(){
+     var strUrl = myurl+"cmd=6";
+    var objResult = sendRequest(strUrl);
+
+    if(objResult.result == 0){
+        alert(objResult.message);
+        return;
+    }
+    alert(objResult.message);
+    window.location.href = "./index.html";
+
 }
 

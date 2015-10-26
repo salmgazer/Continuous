@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Point Of Sale</title>
+  <title>Home</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -15,7 +15,12 @@
 <div class="container mycontainer">
 <div class="row">
 <div class="card col sm s4 center left_bar">
-  <span id="username">Salifu</span><br>
+<div class="top">
+  <span class="showUser"id="username"> </span>
+  <button onclick="logout()" class="btn waves-effect waves-light s2" type="submit" name="action">LOGOUT
+    <!-- <i class="material-icons left">send</i> -->
+  </button>
+  </div>
 <div class="myf orange darken-3 white-text"><h5>My Farms</h5></div>
   <!-- Farm lands come here -->
   <div id="farm_lands">
@@ -53,39 +58,42 @@
   <div id="modal1" class="modal">
     <div class="modal-content">
       <h4>Add A New Farmland</h4>
+      <div class="error_area center" id="error_area">
+
+      </div>
        <div class="input-field col s12">
                 <i class="fa fa-user prefix"></i>
-                <input id="username" type="text" class="validate" autocomplete="off">
-                <label for="username">Farm name</label>
+                <input id="farmname" type="text" class="validate" autocomplete="off">
+                <label for="farmname">Farm name</label>
             </div>
             <div class="input-field col s12 mypass">
                 <i class="fa fa-key prefix"></i>
-                <input id="password" type="password" class="validate" autocomplete="off">
-                <label for="pPassword">Longitude</label>
+                <input id="longitude" type="text" class="validate" autocomplete="off">
+                <label for="longitude">Longitude</label>
             </div>
             <div class="input-field col s12 mypass">
                 <i class="fa fa-key prefix"></i>
-                <input id="password" type="password" class="validate" autocomplete="off">
-                <label for="pPassword">Latitude</label>
+                <input id="latitude" type="text" class="validate" autocomplete="off">
+                <label for="latitude">Latitude</label>
             </div>
             <div class="input-field col s12 mypass">
                 <i class="fa fa-key prefix"></i>
-                <input id="password" type="password" class="validate" autocomplete="off">
-                <label for="pPassword">City</label>
+                <input id="city" type="text" class="validate" autocomplete="off">
+                <label for="city">City</label>
             </div>
             <div class="input-field col s12 mypass">
                 <i class="fa fa-key prefix"></i>
-                <input id="password" type="password" class="validate" autocomplete="off">
-                <label for="pPassword">City ID</label>
+                <input id="cityId" type="text" class="validate" autocomplete="off">
+                <label for="cityId">City ID</label>
             </div>
             <div class="input-field col s12 mypass">
                 <i class="fa fa-key prefix"></i>
-                <input id="password" type="password" class="validate" autocomplete="off">
-                <label for="pPassword">Farm Size</label>
+                <input id="farmSize" type="text" class="validate" autocomplete="off">
+                <label for="farmSize">Farm Size</label>
             </div>
     </div>
     <div class="modal-footer">
-        <a href="#" class="btn">Submit</a>
+        <a href="#" onclick="addFarm()" class="btn">Submit</a>
       <a href="#!" class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
   </div>
@@ -100,7 +108,7 @@
   <script>
       $(document).ready(function(){
           $('.modal-trigger').leanModal();
-          getFarmsById("salifu123");
+          getFarmsById(getUser());
       });
   </script>
   </body>

@@ -127,4 +127,19 @@ nav{
 .myf{
     font-weight: lighter;
 }
+.showUser{
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    margin-right: 40px;
+    background-color: #2EB82E;
+    padding: 5px;
+}
+.top{
+    margin-top: 20px;
+
+}
+#farm_lands{
+   font-size: 18px; 
+}
 
