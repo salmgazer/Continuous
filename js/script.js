@@ -76,7 +76,7 @@ function getFarmsById(){
     landscontent = "";
     getResponse(lands[0]['city']);
     for(i = 0; i < lands.length; i++){
-        landscontent += '<div class="listed_farms" onclick=getResponse("'+lands[i]['city']+'")><a href="#">'+lands[i]['farm_name']+'</a></div><br>';
+        landscontent += '<div class="listed_farms" onclick=getResponse("'+lands[i]['city']+'")><a href="#" class="white-text">'+lands[i]['farm_name']+'</a></div><br>';
     }
     document.getElementById("farm_lands").innerHTML = landscontent;
 }
@@ -202,7 +202,7 @@ function addFarm(){
     $("#farmSize").val('');
     document.getElementById("error_area").innerHTML = '<div class="chip green white-text">'+objResult.message+'<i class="material-icons">close</i></div>';
    
-    // window.location.href = "home.html";
+    window.location.href = "home.html";
 }
 function logout(){
      var strUrl = myurl+"cmd=6";
