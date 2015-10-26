@@ -19,6 +19,13 @@ $(function () {
   });
 });
 
+$(function () {
+  $('#signup').submit(function(e) {
+    e.preventDefault();
+    signUpForm();
+  });
+});
+
 function getResponse(myloc){
     var strUrl = "http://api.openweathermap.org/data/2.5/weather?q="+myloc+"&type=accurate&mode=json&cnt=16&appid=bfac6bfb72fcbb48a2edcf1778447d95";
     var objResult = sendRequest(strUrl);
@@ -77,4 +84,8 @@ function getFarmsById(){
 
 function cropToGrow(){
     alert(currentCity);
+}
+
+function signUpForm(){
+    $("#logside").load("views/signup.html");
 }
