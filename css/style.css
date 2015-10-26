@@ -1,0 +1,121 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+
+nav{
+    /*height: 100px;*/
+}
+
+#menu{
+    margin-top: 50px;
+}
+
+.loginHeading{
+    font-weight: lighter;
+}
+
+.mypass{
+    margin-bottom: 40px;
+}
+
+.login{
+    margin: auto;
+    margin-top: 40px;
+    width: 45%;
+}
+
+.loginbtn{
+    margin-bottom: 30px;
+    width: 60%;
+}
+
+.loginfooter{
+    margin-bottom: 60px;
+}
+
+.lowerfooterleft{
+    margin-left: 10px;
+}
+
+.lowerfooterright{
+    margin-right: 10px;
+}
+
+.login_image{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.login_area{
+    margin-top: 50px;
+}
+
+/*Media Queries*/
+/* ----------- Galaxy Tab 10.1 ----------- */
+
+@media (max-width: 800px) {
+    .login{
+        width: 60%;
+    }
+
+     .lowerfooterleft{
+    margin-left: 10px;
+}
+
+.lowerfooterright{
+    margin-right: 10px;
+}
+    .login_area{
+        margin-top: 35px;
+    }
+}
+
+/* ----------- Galaxy S5 ----------- */
+
+/* Portrait and Landscape */
+@media (max-width: 380px) {
+  .login{
+      width: 100%;
+  }
+
+    .lowerfooterleft{
+    margin-left: 10px;
+}
+
+.lowerfooterright{
+    margin-right: 10px;
+}
+
+    .login_area{
+        margin-top: 20px;
+    }
+    .brand-logo{
+        text-align: center;
+    }
+
+}
+
+.left_bar{
+    padding-top: -20px;
+}
+
+.listed_farms{
+    height: 30px;
+}
+
+.mynav{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

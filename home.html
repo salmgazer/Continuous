@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Point Of Sale</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="font/css/font-awesome.min.css">
+</head>
+<body class="cyan darken-3">
+<div class="container mycontainer">
+<div class="row">
+<div class="card col sm s4 center left_bar">
+  <span id="username">Salifu</span><br>
+  <!-- Farm lands come here -->
+  <div id="farm_lands">
+
+  </div>
+</div>
+    <div class="card-panel col sm s7 right">
+        <div class="mynav">
+        <button class="btn-large green">Current Weather Conditions</button>
+        <button class="btn-large green" onclick="cropToGrow()">Crops I should Grow</button>
+    </div>
+    <div class="information" id="information">
+    </div>
+    </div>
+</div>
+<div></div>
+    </div>
+
+
+  <!--  Scripts-->
+  <script src="js/jquery.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+      $(document).ready(function(){
+          getFarmsById("salifu123");
+      });
+  </script>
+  </body>
+</html>
