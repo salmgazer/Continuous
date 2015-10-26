@@ -37,7 +37,7 @@ nav{
 }
 
 .loginbtn{
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     width: 60%;
 }
 
@@ -119,3 +119,12 @@ nav{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.newact{
+    margin-bottom: 20px;
+}
+
+.myf{
+    font-weight: lighter;
+}
+
