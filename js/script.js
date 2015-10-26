@@ -92,3 +92,47 @@ function getUser(){
 function signUpForm(){
     $("#logside").load("views/signup.html");
 }
+function signUpUser(){
+    /*username*/
+    var username = $("#susername").val();
+    /*password*/
+    var password = $("#pPassword").val();
+      /*farmer name*/
+    var farmername = $("#farmername").val();
+      /*phone*/
+    var phone = $("#phone").val();
+
+    /* empty username */
+    if(username.length == 0){
+        document.getElementById("error_area").innerHTML = '<div class="chip red white-text">Empty username<i class="material-icons">close</i></div>';
+        return
+        }
+    if(password.length == 0){
+        document.getElementById("error_area").innerHTML = '<div class="chip red white-text">Empty password<i class="material-icons">close</i></div>';
+        return;
+    }
+    if(farmername.length == 0){
+        document.getElementById("error_area").innerHTML = '<div class="chip red white-text">Empty Farmer Name<i class="material-icons">close</i></div>';
+        return;
+    }
+    if(phone.length == 0){
+        document.getElementById("error_area").innerHTML = '<div class="chip red white-text">Empty Phone<i class="material-icons">close</i></div>';
+        return;
+    }
+    var strUrl = myurl+"cmd=3&username="+username+"&password="+password+"&farmername="+farmername+"&phone="+phone;
+    var objResult = sendRequest(strUrl);
+    var errorArea = document.getElementById("error_area");
+    document.getElementById("error_area").innerHTML = '<div class="progress"><div class="indeterminate"></div></div>';
+    if(objResult.result == 0) {
+    document.getElementById("error_area").innerHTML = '<div class="chip red white-text">'+objResult.message+'<i class="material-icons">close</i></div>';
+    return;
+    }
+    $("#susername").val('');
+    $("#pPassword").val('');
+    $("#phone").val('');
+    $("#farmername").val('');
+    document.getElementById("error_area").innerHTML = '<div class="chip green white-text">'+objResult.message+'<i class="material-icons">close</i></div>';
+   
+    // window.location.href = "index.html";
+}
+

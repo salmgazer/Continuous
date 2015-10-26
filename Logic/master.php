@@ -17,6 +17,9 @@ switch ($cmd) {
     case 2:
         getFarmsById();
         break;
+    case 3:
+        userSignUp();
+        break;
 	default:
 		echo '{"result": 0, "message": "Unknown command"}';
 		return;
@@ -67,6 +70,22 @@ function getFarmsById(){
     echo "]}";
     return;
 }
+ function userSignUp(){
+    include "appuser.php";
 
+    $myuser = new appuser();
+      $username = $_GET['username'];
+    $password = $_GET['password'];
+      $phone = $_GET['phone'];
+    $farmername = $_GET['farmername'];
+
+if(!$myuser->signUp($username,$password,$farmername,$phone)){
+        echo '{"result": 0, "message": "User not created"}';
+        return;
+    }
+    echo '{"result": 1, "message": "Sign up was successful"}';
+
+    return;
+ }
 
 ?>
