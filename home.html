@@ -35,7 +35,7 @@
     </div>
 
     <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-large green lighten-1">
+    <a href="#modal1" class="btn-floating btn-large green lighten-1 modal-trigger">
       <i class="large material-icons"><i class="fa fa-plus"></i></i>
     </a>
     <!--<ul>
@@ -46,6 +46,51 @@
     </ul>-->
   </div>
 
+    <!--Modal Comes  Here -->
+    <!-- Modal Trigger -->
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Add A New Farmland</h4>
+       <div class="input-field col s12">
+                <i class="fa fa-user prefix"></i>
+                <input id="username" type="text" class="validate" autocomplete="off">
+                <label for="username">Farm name</label>
+            </div>
+            <div class="input-field col s12 mypass">
+                <i class="fa fa-key prefix"></i>
+                <input id="password" type="password" class="validate" autocomplete="off">
+                <label for="pPassword">Longitude</label>
+            </div>
+            <div class="input-field col s12 mypass">
+                <i class="fa fa-key prefix"></i>
+                <input id="password" type="password" class="validate" autocomplete="off">
+                <label for="pPassword">Latitude</label>
+            </div>
+            <div class="input-field col s12 mypass">
+                <i class="fa fa-key prefix"></i>
+                <input id="password" type="password" class="validate" autocomplete="off">
+                <label for="pPassword">City</label>
+            </div>
+            <div class="input-field col s12 mypass">
+                <i class="fa fa-key prefix"></i>
+                <input id="password" type="password" class="validate" autocomplete="off">
+                <label for="pPassword">City ID</label>
+            </div>
+            <div class="input-field col s12 mypass">
+                <i class="fa fa-key prefix"></i>
+                <input id="password" type="password" class="validate" autocomplete="off">
+                <label for="pPassword">Farm Size</label>
+            </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn">Submit</a>
+      <a href="#!" class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+    <!-- Modal Ends here -->
+
   <!--  Scripts-->
   <script src="js/jquery.js"></script>
   <script src="js/materialize.min.js"></script>
@@ -54,6 +99,7 @@
 
   <script>
       $(document).ready(function(){
+          $('.modal-trigger').leanModal();
           getFarmsById("salifu123");
       });
   </script>
